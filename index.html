@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where Will the Magic Take Me?</title>
+  <meta name="description" content="A side-by-side comparison of Walt Disney World, Disneyland Resort, Aulani, and Disney Cruise Line, with a quiz to find your fit. A student portfolio project by Marisa Vodrazka.">
+  <meta property="og:title" content="Where Will the Magic Take Me?">
+  <meta property="og:description" content="Compare four Disney vacations side by side and take a quick quiz to find your fit.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2A4B8D">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232771B8'/%3E%3Cpath d='M16 5l2.6 8.4L27 16l-8.4 2.6L16 27l-2.6-8.4L5 16l8.4-2.6z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Reusable icon symbols: original drawings, not Disney artwork -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-burst" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l1.8 6.2L20 6.5l-4.2 4.7L22 13l-6.3 1.4 1.9 6.1-5.6-3.4-5.6 3.4 1.9-6.1L2 13l6.2-1.8L4 6.5l6.2 1.7z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="10" r="4.2" fill="currentColor"/><path fill="currentColor" d="M11 1.5h2v3h-2zM11 15.5h2v2h-2zM1.5 9h3v2h-3zM19.5 9h3v2h-3zM4.2 3.4l1.4-1.4 2.1 2.1-1.4 1.4zM16.3 4.1l2.1-2.1 1.4 1.4-2.1 2.1z"/><path fill="currentColor" d="M1 22c2.5-3.2 6-5 11-5s8.5 1.8 11 5z"/></symbol>
+    <symbol id="i-palm" viewBox="0 0 24 24"><path fill="currentColor" d="M12.6 9.3c.4 4 .2 8.3-1 12.7H9.4c1.3-4.3 1.6-8.5 1.2-12.4z"/><path fill="currentColor" d="M11.5 9.5C9 6.6 5.4 6 2 7.6 5 5 8.6 4.6 11.3 7.2 10.8 4.5 8.9 2.6 6.2 2c3.6-.4 6.3 1.5 6.9 4.7C14.6 3.8 17.6 2.7 21 3.6c-3 .4-5.4 2-6.3 4.5 2.9-1.1 6-.3 8.3 2.3-3.3-1.2-6.6-.9-9 1.1z"/><path fill="currentColor" d="M3 22c3-1.4 6-2 9-2s6 .6 9 2z"/></symbol>
+    <symbol id="i-ship" viewBox="0 0 24 24"><path fill="currentColor" d="M8 3h3v2h2V3h3v4h2.5a1 1 0 0 1 1 1v4.2L22 13l-2.6 5.4c-.6-.3-1.3-.5-2-.4-1.2.1-2 .8-2.7.8s-1.6-.8-2.7-.8-1.9.8-2.7.8-1.5-.7-2.7-.8c-.8-.1-1.5.1-2 .4L2 13l2.5-.8V8a1 1 0 0 1 1-1H8zm-1.5 6v2.6L12 10l5.5 1.6V9z"/><path fill="currentColor" d="M2 21.5c1.2-.9 2.3-1.4 3.3-1.4 1.3 0 2 .9 3.3.9s2-.9 3.4-.9 2 .9 3.4.9 2-.9 3.3-.9c1 0 2.1.5 3.3 1.4v1.3c-1.1-.6-2.2-1-3.3-1-1.3 0-2 .9-3.3.9s-2-.9-3.4-.9-2 .9-3.4.9-2-.9-3.3-.9c-1.1 0-2.2.4-3.3 1z"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="8" cy="6.5" r="3.2" fill="currentColor"/><circle cx="17" cy="8" r="2.6" fill="currentColor"/><path fill="currentColor" d="M1.5 20c0-4.3 2.9-7.2 6.5-7.2s6.5 2.9 6.5 7.2zM15.3 20c0-2.6-.8-4.8-2.2-6.4.9-.7 2.2-1.1 3.9-1.1 3 0 5.5 2.4 5.5 6V20z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path fill="currentColor" d="M7 1.5h2.2V4h5.6V1.5H17V4h2.5A2.5 2.5 0 0 1 22 6.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 19.5v-13A2.5 2.5 0 0 1 4.5 4H7zM4.5 9.5v10h15v-10z"/><path fill="currentColor" d="M10.6 18.2l-3.4-3.4 1.5-1.5 1.9 1.9 4.7-4.7 1.5 1.5z"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 3.5h13a1 1 0 0 1 1 1V7h-14a1 1 0 0 0 0 2h15a2.5 2.5 0 0 1 2.5 2.5v7a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-12a3 3 0 0 1 2.5-3zM16.5 13a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.8l3.1 6.5 7.1.9-5.2 4.9 1.3 7-6.3-3.4-6.3 3.4 1.3-7L1.8 9.2l7.1-.9z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path fill="currentColor" d="M21 2.5C11 2.5 3.5 7 3.5 15c0 1.6.4 3 1 4.2L2 21.7 3.3 23l2.5-2.5c1.2.7 2.7 1 4.2 1 8 0 11-7.8 11-19zM7.6 17.8l-1-1C9.3 12.4 12.5 9.5 17 7.5c-3.6 2.5-6.6 6-9.4 10.3z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path fill="currentColor" d="M8.6 3.6L17 12l-8.4 8.4-2.3-2.3 6.1-6.1-6.1-6.1z"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path fill="currentColor" d="M14 3h7v7h-2.5V7.3l-7.6 7.6-1.8-1.8 7.6-7.6H14zM5 5h6v2.5H5.5v11h11V13H19v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="M10 3l1.9 6.1L18 11l-6.1 1.9L10 19l-1.9-6.1L2 11l6.1-1.9zM18.5 1.5l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9zM18.5 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Where Will the Magic Take Me? Back to top">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-sparkle"/></svg>
+        <span>Where Will the Magic Take Me?</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#compare">Compare</a></li>
+          <li><a href="#quiz">Find Your Trip</a></li>
+          <li><a href="#sources">Sources</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">Four Disney vacations, one page</p>
+        <h1 id="hero-title">Where will the magic take&nbsp;me?</h1>
+        <p class="hero-sub">Compare Walt Disney World, Disneyland Resort, Aulani, and Disney Cruise Line side by side, then take a 4-question quiz to find the trip that fits you.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#quiz">Take the quiz</a>
+          <a class="btn btn-outline-light" href="#compare">Compare destinations</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINATION TILES (overlap hero like the app's home tiles) -->
+    <nav class="container tiles" aria-label="Jump to a destination">
+      <ul>
+        <li><a class="tile" href="#wdw"><svg class="tile-icon" aria-hidden="true"><use href="#i-burst"/></svg><span class="tile-label">Walt Disney World</span><span class="tile-meta">Florida</span></a></li>
+        <li><a class="tile" href="#dlr"><svg class="tile-icon" aria-hidden="true"><use href="#i-sun"/></svg><span class="tile-label">Disneyland Resort</span><span class="tile-meta">California</span></a></li>
+        <li><a class="tile" href="#aulani"><svg class="tile-icon" aria-hidden="true"><use href="#i-palm"/></svg><span class="tile-label">Aulani</span><span class="tile-meta">Hawai‘i</span></a></li>
+        <li><a class="tile" href="#dcl"><svg class="tile-icon" aria-hidden="true"><use href="#i-ship"/></svg><span class="tile-label">Disney Cruise Line</span><span class="tile-meta">At sea</span></a></li>
+      </ul>
+    </nav>
+
+    <!-- COMPARE -->
+    <section class="section" id="compare" aria-labelledby="compare-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="compare-title">Compare destinations</h2>
+            <p class="section-sub">The same five questions, answered for every trip. Facts link to official Disney pages; rows marked <span class="tag">My take</span> are my own assessment.</p>
+          </div>
+          <a class="text-link" href="#budget-legend">How budget works<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+        </div>
+
+        <div class="compare-grid">
+
+          <!-- WALT DISNEY WORLD -->
+          <article class="dest-card" id="wdw" aria-labelledby="wdw-name">
+            <header class="card-head">
+              <span class="badge"><svg aria-hidden="true"><use href="#i-burst"/></svg></span>
+              <div>
+                <p class="eyebrow">Near Orlando, Florida</p>
+                <h3 id="wdw-name">Walt Disney World</h3>
+              </div>
+            </header>
+            <p class="card-summary">Four theme parks and two water parks under one resort, the most ground to cover of any trip here. <a class="cite" href="https://disneyworld.disney.go.com/admission/tickets/">Source</a></p>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-people"/></svg>Best for <span class="tag">My take</span></h4>
+              <ul class="chips"><li>Families with little kids</li><li>Teens &amp; thrill-seekers</li><li>Once-in-a-while big trips</li></ul>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-calendar"/></svg>Trip length</h4>
+              <p class="value">4–7 days <span class="tag">My take</span></p>
+              <p class="note">Standard park tickets come in 1- to 10-day options. <a class="cite" href="https://disneyworld.disney.go.com/admission/tickets/">Source</a></p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-wallet"/></svg>Budget <span class="tag">My take</span></h4>
+              <p class="budget" data-min="2" data-max="3"><span class="sr-only">Moderate to high: 2 to 3 out of 3</span><span aria-hidden="true"><b>$</b><b>$</b><b>$</b></span></p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-star"/></svg>Must-dos</h4>
+              <ul class="list">
+                <li><a href="https://disneyworld.disney.go.com/entertainment/magic-kingdom/happily-ever-after-fireworks/">Happily Ever After</a> <span>nighttime fireworks at Magic Kingdom</span></li>
+                <li><a href="https://disneyworld.disney.go.com/attractions/epcot/guardians-of-the-galaxy-cosmic-rewind/">Guardians of the Galaxy: Cosmic Rewind</a> <span>coaster at EPCOT</span></li>
+                <li><a href="https://disneyworld.disney.go.com/attractions/hollywood-studios/star-wars-rise-of-the-resistance/">Star Wars: Rise of the Resistance</a> <span>at Hollywood Studios</span></li>
+                <li><a href="https://disneyworld.disney.go.com/attractions/animal-kingdom/avatar-flight-of-passage/">Avatar Flight of Passage</a> <span>3D banshee flight at Animal Kingdom</span></li>
+                <li><a href="https://disneyworld.disney.go.com/attractions/animal-kingdom/kilimanjaro-safaris/">Kilimanjaro Safaris</a> <span>open-air ride past live animals</span></li>
+              </ul>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-leaf"/></svg>Best time to go</h4>
+              <ul class="list seasons">
+                <li><strong>Late summer–fall</strong> <a href="https://disneyworld.disney.go.com/events-tours/magic-kingdom/mickeys-not-so-scary-halloween-party/">Halloween party</a> on select nights, Aug 7–Oct 31</li>
+                <li><strong>Fall</strong> <a href="https://disneyworld.disney.go.com/events-tours/epcot/epcot-international-food-and-wine-festival/">EPCOT Food &amp; Wine Festival</a>, Aug 27–Nov 21</li>
+                <li><strong>Holidays</strong> <a href="https://disneyworld.disney.go.com/events-tours/magic-kingdom/mickeys-very-merry-christmas-party/">Christmas party</a> on select nights, Nov 8–Dec 22</li>
+                <li><strong>Winter</strong> <a href="https://disneyworld.disney.go.com/events-tours/epcot/epcot-international-festival-of-the-arts/">EPCOT Festival of the Arts</a>, Jan 15–Mar 1, 2027</li>
+              </ul>
+            </div>
+
+            <footer class="card-actions">
+              <a class="btn btn-outline btn-sm" href="https://disneyworld.disney.go.com/">Official site<svg aria-hidden="true"><use href="#i-external"/></svg></a>
+              <a class="text-link" href="#src-wdw">Sources<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            </footer>
+          </article>
+
+          <!-- DISNEYLAND RESORT -->
+          <article class="dest-card" id="dlr" aria-labelledby="dlr-name">
+            <header class="card-head">
+              <span class="badge"><svg aria-hidden="true"><use href="#i-sun"/></svg></span>
+              <div>
+                <p class="eyebrow">Anaheim, California</p>
+                <h3 id="dlr-name">Disneyland Resort</h3>
+              </div>
+            </header>
+            <p class="card-summary">Two theme parks plus the Downtown Disney District, about 30 miles southeast of Los Angeles. <a class="cite" href="https://disneyland.disney.go.com/events-tours/halloween-time-at-the-disneyland-resort/">Source</a></p>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-people"/></svg>Best for <span class="tag">My take</span></h4>
+              <ul class="chips"><li>First-timers</li><li>Short getaways</li><li>West Coast travelers</li></ul>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-calendar"/></svg>Trip length</h4>
+              <p class="value">2–3 days <span class="tag">My take</span></p>
+              <p class="note">Resort hotel packages include 2- to 5-day park tickets. <a class="cite" href="https://disneyland.disney.go.com/vacation-packages/resort-hotel-package/">Source</a></p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-wallet"/></svg>Budget <span class="tag">My take</span></h4>
+              <p class="budget" data-min="1" data-max="2"><span class="sr-only">Low to moderate: 1 to 2 out of 3</span><span aria-hidden="true"><b>$</b><b>$</b><b>$</b></span></p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-star"/></svg>Must-dos</h4>
+              <ul class="list">
+                <li><a href="https://disneyland.disney.go.com/attractions/disneyland/sleeping-beauty-castle-walkthrough/">Sleeping Beauty Castle Walkthrough</a> <span>storybook scenes inside the castle</span></li>
+                <li><a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/radiator-springs-racers/">Radiator Springs Racers</a> <span>race through Cars Land</span></li>
+                <li><a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/web-slingers-spider-man-adventure/">WEB SLINGERS: A Spider-Man Adventure</a> <span>at Avengers Campus</span></li>
+                <li><a href="https://disneyland.disney.go.com/attractions/disneyland/star-wars-rise-of-the-resistance/">Star Wars: Rise of the Resistance</a> <span>at Disneyland Park</span></li>
+                <li><a href="https://disneyland.disney.go.com/entertainment/disneyland/fantasmic/">Fantasmic!</a> &amp; <a href="https://disneyland.disney.go.com/entertainment/disney-california-adventure/world-of-color-one/">World of Color – One</a> <span>nighttime shows</span></li>
+              </ul>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-leaf"/></svg>Best time to go</h4>
+              <ul class="list seasons">
+                <li><strong>Late summer–fall</strong> <a href="https://disneyland.disney.go.com/events-tours/halloween-time-at-the-disneyland-resort/">Halloween Time</a>, Aug 21–Oct 31</li>
+                <li><strong>Holidays</strong> <a href="https://disneyland.disney.go.com/events-tours/disney-california-adventure/festival-of-holidays/">Disney Festival of Holidays</a>, Nov 13–Jan 6, 2027</li>
+                <!-- TODO: Disney California Adventure Food & Wine Festival returns in 2027, but dates were not posted as of Sept 30, 2026. Add once announced:
+                     https://disneyland.disney.go.com/events-tours/disney-california-adventure/food-and-wine-festival/ -->
+              </ul>
+            </div>
+
+            <footer class="card-actions">
+              <a class="btn btn-outline btn-sm" href="https://disneyland.disney.go.com/">Official site<svg aria-hidden="true"><use href="#i-external"/></svg></a>
+              <a class="text-link" href="#src-dlr">Sources<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            </footer>
+          </article>
+
+          <!-- AULANI -->
+          <article class="dest-card" id="aulani" aria-labelledby="aulani-name">
+            <header class="card-head">
+              <span class="badge"><svg aria-hidden="true"><use href="#i-palm"/></svg></span>
+              <div>
+                <p class="eyebrow">Ko Olina, O‘ahu, Hawai‘i</p>
+                <h3 id="aulani-name">Aulani, A Disney Resort &amp; Spa</h3>
+              </div>
+            </header>
+            <p class="card-summary">A beach resort with five pool areas, a beach, and many activities included with your stay, with no resort fees. <a class="cite" href="https://www.disneyaulani.com/activities/included-with-your-stay/">Source</a></p>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-people"/></svg>Best for <span class="tag">My take</span></h4>
+              <ul class="chips"><li>Couples</li><li>Multigenerational groups</li><li>Rest over rides</li></ul>
+              <p class="note">Kids ages 4–12 get a supervised kids club. <a class="cite" href="https://www.disneyaulani.com/activities/auntys-beach-house/">Source</a></p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-calendar"/></svg>Trip length</h4>
+              <!-- TODO: No official "typical stay" found on disneyaulani.com (sample itinerary page returned an error on Sept 30, 2026). Verify and update. -->
+              <p class="value">Flexible</p>
+              <p class="note">Aulani doesn't publish a typical stay length, so plan around your flights to Hawai‘i.</p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-wallet"/></svg>Budget <span class="tag">My take</span></h4>
+              <p class="budget" data-min="3" data-max="3"><span class="sr-only">High: 3 out of 3</span><span aria-hidden="true"><b>$</b><b>$</b><b>$</b></span></p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-star"/></svg>Must-dos</h4>
+              <ul class="list">
+                <li><a href="https://www.disneyaulani.com/activities/pools/rainbow-reef/">Rainbow Reef</a> <span>snorkel a private lagoon with tropical fish</span></li>
+                <li><a href="https://www.disneyaulani.com/activities/luau/">KA WA‘A lū‘au</a> <span>feast and evening show</span></li>
+                <li><a href="https://www.disneyaulani.com/spa-fitness/">Laniwai spa</a> <span>with an outdoor hydrotherapy garden</span></li>
+                <li><a href="https://www.disneyaulani.com/activities/included-with-your-stay/">Free cultural activities</a> <span>‘ukulele, hula, live music, fire pit stories</span></li>
+                <li><a href="https://www.disneyaulani.com/activities/">Lazy river &amp; pools</a> <span>plus a sunset beach meetup for teens</span></li>
+              </ul>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-leaf"/></svg>Best time to go</h4>
+              <!-- TODO: No official seasonal events or "best time" guidance found on disneyaulani.com as of Sept 30, 2026. Verify and update. -->
+              <p class="value">Your call</p>
+              <p class="note">Aulani doesn't list seasonal events the way the parks do. Check the resort's <a href="https://www.disneyaulani.com/activities/">activities page</a> for what's on during your dates.</p>
+            </div>
+
+            <footer class="card-actions">
+              <a class="btn btn-outline btn-sm" href="https://www.disneyaulani.com/">Official site<svg aria-hidden="true"><use href="#i-external"/></svg></a>
+              <a class="text-link" href="#src-aulani">Sources<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            </footer>
+          </article>
+
+          <!-- DISNEY CRUISE LINE -->
+          <article class="dest-card" id="dcl" aria-labelledby="dcl-name">
+            <header class="card-head">
+              <span class="badge"><svg aria-hidden="true"><use href="#i-ship"/></svg></span>
+              <div>
+                <p class="eyebrow">Bahamas, Caribbean, Mexico &amp; beyond</p>
+                <h3 id="dcl-name">Disney Cruise Line</h3>
+              </div>
+            </header>
+            <p class="card-summary">Unpack once. Most meals, stage shows, pools, and kids' clubs are part of the fare. <a class="cite" href="https://disneycruise.disney.go.com/why-cruise-disney/whats-included-in-cruise/">Source</a></p>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-people"/></svg>Best for <span class="tag">My take</span></h4>
+              <ul class="chips"><li>All-in-one family trips</li><li>Teens</li><li>Adults who want downtime</li></ul>
+              <p class="note">Teen-only spaces for ages 14–17 and an adults-only pool for 18+. <a class="cite" href="https://disneycruise.disney.go.com/why-cruise-disney/tweens-teens/">Source</a></p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-calendar"/></svg>Trip length</h4>
+              <p class="value">2–15 nights</p>
+              <p class="note">Bahamas 3–7 nights, Baja 2–5, Pacific Coast 4–5, Transatlantic 11–15. <a class="cite" href="https://disneycruise.disney.go.com/cruises-destinations/itineraries/">Source</a></p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-wallet"/></svg>Budget <span class="tag">My take</span></h4>
+              <p class="budget" data-min="2" data-max="3"><span class="sr-only">Moderate to high: 2 to 3 out of 3</span><span aria-hidden="true"><b>$</b><b>$</b><b>$</b></span></p>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-star"/></svg>Must-dos</h4>
+              <ul class="list">
+                <li><a href="https://disneycruise.disney.go.com/why-cruise-disney/whats-included-in-cruise/">A private island day</a> <span>on most Bahamas &amp; Caribbean sailings</span></li>
+                <li><a href="https://disneycruise.disney.go.com/why-cruise-disney/whats-included-in-cruise/">Deck party &amp; fireworks at sea</a> <span>on select sailings</span></li>
+                <li><a href="https://disneycruise.disney.go.com/why-cruise-disney/whats-included-in-cruise/">Broadway-style stage shows</a></li>
+                <li><a href="https://disneycruise.disney.go.com/why-cruise-disney/whats-included-in-cruise/">Themed dining</a> <span>with entertainment at dinner</span></li>
+                <li><a href="https://disneycruise.disney.go.com/why-cruise-disney/whats-included-in-cruise/">Quiet Cove</a> <span>adults-only pool, 18+</span></li>
+              </ul>
+            </div>
+
+            <div class="row">
+              <h4><svg aria-hidden="true"><use href="#i-leaf"/></svg>Best time to go</h4>
+              <ul class="list seasons">
+                <li><strong>Fall</strong> <a href="https://disneycruise.disney.go.com/specialty-cruises/">Halloween on the High Seas</a> sailings</li>
+                <li><strong>November</strong> <a href="https://disneycruise.disney.go.com/specialty-cruises/">Thanksgiving</a> on select sailings</li>
+                <li><strong>Winter holidays</strong> <a href="https://disneycruise.disney.go.com/specialty-cruises/">Very Merrytime Cruises</a></li>
+              </ul>
+            </div>
+
+            <footer class="card-actions">
+              <a class="btn btn-outline btn-sm" href="https://disneycruise.disney.go.com/">Official site<svg aria-hidden="true"><use href="#i-external"/></svg></a>
+              <a class="text-link" href="#src-dcl">Sources<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            </footer>
+          </article>
+        </div>
+
+        <aside class="legend" id="budget-legend" aria-labelledby="legend-title">
+          <h3 id="legend-title">How the budget scale works</h3>
+          <ul class="legend-scale">
+            <li><span class="budget" data-min="1" data-max="1" aria-hidden="true"><b>$</b><b>$</b><b>$</b></span> Lighter spend</li>
+            <li><span class="budget" data-min="2" data-max="2" aria-hidden="true"><b>$</b><b>$</b><b>$</b></span> Mid-range</li>
+            <li><span class="budget" data-min="3" data-max="3" aria-hidden="true"><b>$</b><b>$</b><b>$</b></span> Premium</li>
+            <li><span class="budget" data-min="2" data-max="3" aria-hidden="true"><b>$</b><b>$</b><b>$</b></span> Lighter shading = depends on trip length</li>
+          </ul>
+          <p>Prices change often, so these are relative ratings, not quotes. They're my own assessment based on typical trip length, what's included (cruise fares cover most meals and shows), and travel distance (most U.S. mainland visitors fly to reach Aulani). Check the official sites for current pricing.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section section-tint" id="quiz" aria-labelledby="quiz-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="quiz-title">Which trip fits you?</h2>
+            <p class="section-sub">Four quick questions. Your answers stay in your browser.</p>
+          </div>
+        </div>
+
+        <div class="quiz-card">
+          <form id="quiz-form" novalidate>
+            <div class="quiz-progress" aria-hidden="true">
+              <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+            </div>
+            <p class="quiz-step" id="quiz-step" aria-live="polite">Question 1 of 4</p>
+
+            <fieldset class="question" data-step="1">
+              <legend tabindex="-1">Who's going?</legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="who" value="littleKids"><span>Family with little kids</span></label>
+                <label class="option"><input type="radio" name="who" value="teens"><span>Family with teens</span></label>
+                <label class="option"><input type="radio" name="who" value="adults"><span>Couple or adults only</span></label>
+                <label class="option"><input type="radio" name="who" value="firstTime"><span>First-ever Disney trip</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="question" data-step="2">
+              <legend tabindex="-1">What's your budget?</legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="budget" value="low"><span><b class="opt-dollar">$</b> Keep it lean</span></label>
+                <label class="option"><input type="radio" name="budget" value="mid"><span><b class="opt-dollar">$$</b> Somewhere in the middle</span></label>
+                <label class="option"><input type="radio" name="budget" value="high"><span><b class="opt-dollar">$$$</b> Go all out</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="question" data-step="3">
+              <legend tabindex="-1">How long can you get away?</legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="length" value="short"><span>2–3 days</span></label>
+                <label class="option"><input type="radio" name="length" value="medium"><span>4–5 days</span></label>
+                <label class="option"><input type="radio" name="length" value="long"><span>6 days or more</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="question" data-step="4">
+              <legend tabindex="-1">What's the vibe?</legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="vibe" value="thrills"><span>Big rides &amp; nighttime shows</span></label>
+                <label class="option"><input type="radio" name="vibe" value="relax"><span>Beach time &amp; slowing down</span></label>
+                <label class="option"><input type="radio" name="vibe" value="easy"><span>Unpack once, everything included</span></label>
+                <label class="option"><input type="radio" name="vibe" value="quick"><span>A quick, easy getaway</span></label>
+              </div>
+            </fieldset>
+
+            <p class="quiz-error" id="quiz-error" role="alert"></p>
+
+            <div class="quiz-actions">
+              <button type="button" class="btn btn-outline" id="quiz-back">Back</button>
+              <button type="submit" class="btn btn-solid" id="quiz-next">Next</button>
+            </div>
+          </form>
+
+          <div class="result" id="quiz-result" hidden tabindex="-1" aria-labelledby="result-name">
+            <p class="eyebrow result-eyebrow"><svg aria-hidden="true"><use href="#i-sparkle"/></svg>Your recommended trip</p>
+            <div class="result-body">
+              <span class="badge badge-lg"><svg aria-hidden="true"><use id="result-icon" href="#i-burst"/></svg></span>
+              <div>
+                <h3 id="result-name"></h3>
+                <p id="result-reason"></p>
+              </div>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-outline" id="quiz-restart">Start over</button>
+              <a class="text-link" id="result-link" href="#compare">See the details<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            </div>
+          </div>
+
+          <noscript><p class="note">The quiz needs JavaScript. You can still compare every destination above.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section class="section" id="sources" aria-labelledby="sources-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="sources-title">Sources</h2>
+            <p class="section-sub">Every fact on this page comes from an official Disney website. All pages were accessed <time datetime="2026-09-30">September 30, 2026</time>. All descriptions are written in my own words.</p>
+          </div>
+        </div>
+
+        <div class="sources-grid">
+          <div class="source-group" id="src-wdw">
+            <h3>Walt Disney World</h3>
+            <ul>
+              <li><a href="https://disneyworld.disney.go.com/admission/tickets/">Theme Park Tickets</a></li>
+              <li><a href="https://disneyworld.disney.go.com/entertainment/magic-kingdom/happily-ever-after-fireworks/">Happily Ever After</a></li>
+              <li><a href="https://disneyworld.disney.go.com/attractions/epcot/guardians-of-the-galaxy-cosmic-rewind/">Guardians of the Galaxy: Cosmic Rewind</a></li>
+              <li><a href="https://disneyworld.disney.go.com/attractions/hollywood-studios/star-wars-rise-of-the-resistance/">Star Wars: Rise of the Resistance</a></li>
+              <li><a href="https://disneyworld.disney.go.com/attractions/animal-kingdom/avatar-flight-of-passage/">Avatar Flight of Passage</a></li>
+              <li><a href="https://disneyworld.disney.go.com/attractions/animal-kingdom/kilimanjaro-safaris/">Kilimanjaro Safaris</a></li>
+              <li><a href="https://disneyworld.disney.go.com/events-tours/magic-kingdom/mickeys-not-so-scary-halloween-party/">Mickey's Not-So-Scary Halloween Party</a></li>
+              <li><a href="https://disneyworld.disney.go.com/events-tours/epcot/epcot-international-food-and-wine-festival/">EPCOT International Food &amp; Wine Festival</a></li>
+              <li><a href="https://disneyworld.disney.go.com/events-tours/magic-kingdom/mickeys-very-merry-christmas-party/">Mickey's Very Merry Christmas Party</a></li>
+              <li><a href="https://disneyworld.disney.go.com/events-tours/epcot/epcot-international-festival-of-the-arts/">EPCOT International Festival of the Arts</a></li>
+            </ul>
+          </div>
+          <div class="source-group" id="src-dlr">
+            <h3>Disneyland Resort</h3>
+            <ul>
+              <li><a href="https://disneyland.disney.go.com/vacation-packages/resort-hotel-package/">Resort Hotel Package</a></li>
+              <li><a href="https://disneyland.disney.go.com/attractions/disneyland/sleeping-beauty-castle-walkthrough/">Sleeping Beauty Castle Walkthrough</a></li>
+              <li><a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/radiator-springs-racers/">Radiator Springs Racers</a></li>
+              <li><a href="https://disneyland.disney.go.com/attractions/disney-california-adventure/web-slingers-spider-man-adventure/">WEB SLINGERS: A Spider-Man Adventure</a></li>
+              <li><a href="https://disneyland.disney.go.com/attractions/disneyland/star-wars-rise-of-the-resistance/">Star Wars: Rise of the Resistance</a></li>
+              <li><a href="https://disneyland.disney.go.com/entertainment/disneyland/fantasmic/">Fantasmic!</a></li>
+              <li><a href="https://disneyland.disney.go.com/entertainment/disney-california-adventure/world-of-color-one/">World of Color – One</a></li>
+              <li><a href="https://disneyland.disney.go.com/events-tours/halloween-time-at-the-disneyland-resort/">Halloween Time</a></li>
+              <li><a href="https://disneyland.disney.go.com/events-tours/disney-california-adventure/festival-of-holidays/">Disney Festival of Holidays</a></li>
+            </ul>
+          </div>
+          <div class="source-group" id="src-aulani">
+            <h3>Aulani</h3>
+            <ul>
+              <li><a href="https://www.disneyaulani.com/activities/included-with-your-stay/">Included With Your Stay</a></li>
+              <li><a href="https://www.disneyaulani.com/activities/">Activities</a></li>
+              <li><a href="https://www.disneyaulani.com/activities/auntys-beach-house/">Aunty's Beach House kids club</a></li>
+              <li><a href="https://www.disneyaulani.com/activities/pools/rainbow-reef/">Rainbow Reef</a></li>
+              <li><a href="https://www.disneyaulani.com/activities/luau/">KA WA‘A lū‘au</a></li>
+              <li><a href="https://www.disneyaulani.com/spa-fitness/">Laniwai spa &amp; fitness</a></li>
+            </ul>
+          </div>
+          <div class="source-group" id="src-dcl">
+            <h3>Disney Cruise Line</h3>
+            <ul>
+              <li><a href="https://disneycruise.disney.go.com/why-cruise-disney/whats-included-in-cruise/">What's Included</a></li>
+              <li><a href="https://disneycruise.disney.go.com/cruises-destinations/itineraries/">Itineraries &amp; Destinations</a></li>
+              <li><a href="https://disneycruise.disney.go.com/cruises-destinations/itineraries/bahamas/">Bahamas Cruises</a></li>
+              <li><a href="https://disneycruise.disney.go.com/why-cruise-disney/tweens-teens/">Tweens &amp; Teens</a></li>
+              <li><a href="https://disneycruise.disney.go.com/specialty-cruises/">Holiday &amp; Seasonal Sailings</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>A student portfolio project by Marisa Vodrazka.</strong></p>
+      <p>This site is not affiliated with, endorsed by, or sponsored by The Walt Disney Company. All trademarks belong to their respective owners. Information is current as of September 30, 2026. Always check official sites before booking.</p>
+      <p><a href="https://github.com/marisa2620-hash">GitHub</a> · <a href="https://github.com/marisa2620-hash/where-will-the-magic-take-me">View the source code</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

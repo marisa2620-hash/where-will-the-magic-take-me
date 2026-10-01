@@ -2,7 +2,7 @@
 
 A one-page site comparing four Disney vacations side by side (Walt Disney World, Disneyland Resort, Aulani, and Disney Cruise Line), plus a short quiz that recommends one based on group, budget, trip length, and vibe.
 
-Built by **Marisa Vodrazka** as a student portfolio project. Not affiliated with, endorsed by, or sponsored by The Walt Disney Company.
+Built by **Marisa Vodrazka** assisted by **Claude** as a student portfolio project. Not affiliated with, endorsed by, or sponsored by The Walt Disney Company.
 
 ## What's inside
 

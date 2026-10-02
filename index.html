@@ -43,6 +43,7 @@
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li><a href="#compare">Compare</a></li>
+          <li><a href="#cost">Price It</a></li>
           <li><a href="#quiz">Find Your Trip</a></li>
           <li><a href="#sources">Sources</a></li>
         </ul>
@@ -56,7 +57,7 @@
       <div class="container hero-inner">
         <p class="hero-eyebrow">Four Disney vacations, one page</p>
         <h1 id="hero-title">Where will the magic take&nbsp;me?</h1>
-        <p class="hero-sub">Compare Walt Disney World, Disneyland Resort, Aulani, and Disney Cruise Line side by side, then take a 4-question quiz to find the trip that fits you.</p>
+        <p class="hero-sub">Compare Walt Disney World, Disneyland Resort, Aulani, and Disney Cruise Line side by side, price out your own dates, and take a 4-question quiz to find the trip that fits you.</p>
         <div class="hero-actions">
           <a class="btn btn-solid" href="#quiz">Take the quiz</a>
           <a class="btn btn-outline-light" href="#compare">Compare destinations</a>
@@ -316,8 +317,132 @@
       </div>
     </section>
 
+    <!-- PRICE YOUR DATES -->
+    <section class="section section-tint" id="cost" aria-labelledby="cost-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="cost-title">Which trip is cheaper for your dates?</h2>
+            <p class="section-sub">Disney prices change by date and are only shown in its own booking tools, so this calculator uses the real quotes you get. Pick your dates, open each official price page, and type in what you see. Your numbers stay in this browser.</p>
+          </div>
+        </div>
+
+        <div class="setup-card">
+          <div class="field-row">
+            <div class="field">
+              <label for="trip-start">Start date</label>
+              <input id="trip-start" type="date">
+            </div>
+            <div class="field">
+              <label for="trip-end">End date</label>
+              <input id="trip-end" type="date">
+            </div>
+            <div class="field field-sm">
+              <label for="trip-travelers">Travelers</label>
+              <input id="trip-travelers" type="number" inputmode="numeric" min="1" max="20" step="1" value="2">
+            </div>
+            <div class="field">
+              <label for="trip-budget">Total budget <span class="optional">(optional)</span></label>
+              <div class="money"><span aria-hidden="true">$</span><input id="trip-budget" type="number" inputmode="decimal" min="0" step="any" placeholder="5000"></div>
+            </div>
+          </div>
+          <p class="trip-summary" id="trip-summary" aria-live="polite">Pick your dates to get started.</p>
+          <p class="form-error" id="date-error" role="alert"></p>
+
+          <div class="happening" id="happening" hidden>
+            <h3>Happening on your dates</h3>
+            <ul id="happening-list"></ul>
+            <p class="note" id="happening-note"></p>
+          </div>
+        </div>
+
+        <p class="cost-tip"><svg aria-hidden="true"><use href="#i-sparkle"/></svg>Price the same dates and number of travelers on each site so the totals compare fairly. Leave out any trip you aren't considering.</p>
+
+        <div class="cost-grid">
+          <article class="cost-card" data-dest="wdw" aria-labelledby="cost-wdw-name">
+            <header class="card-head">
+              <span class="badge"><svg aria-hidden="true"><use href="#i-burst"/></svg></span>
+              <h3 id="cost-wdw-name">Walt Disney World</h3>
+            </header>
+            <div class="cost-fields">
+              <div class="field"><label for="wdw-tickets">Park tickets</label><div class="money"><span aria-hidden="true">$</span><input id="wdw-tickets" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="wdw-hotel">Hotel</label><div class="money"><span aria-hidden="true">$</span><input id="wdw-hotel" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="wdw-travel">Getting there <span class="optional">(flights, gas)</span></label><div class="money"><span aria-hidden="true">$</span><input id="wdw-travel" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="wdw-food">Food</label><div class="money"><span aria-hidden="true">$</span><input id="wdw-food" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="wdw-extras">Extras <span class="optional">(optional)</span></label><div class="money"><span aria-hidden="true">$</span><input id="wdw-extras" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+            </div>
+            <ul class="price-links">
+              <li><a href="https://disneyworld.disney.go.com/admission/tickets/" target="_blank" rel="noopener">Ticket prices<svg aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li>
+              <li><a href="https://disneyworld.disney.go.com/resorts/" target="_blank" rel="noopener">Hotel prices<svg aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li>
+            </ul>
+            <div class="cost-total"><span class="cost-flag">Cheapest</span><span class="total-label">Trip total</span><strong data-total>—</strong><span class="total-meta" data-meta></span></div>
+          </article>
+
+          <article class="cost-card" data-dest="dlr" aria-labelledby="cost-dlr-name">
+            <header class="card-head">
+              <span class="badge"><svg aria-hidden="true"><use href="#i-sun"/></svg></span>
+              <h3 id="cost-dlr-name">Disneyland Resort</h3>
+            </header>
+            <div class="cost-fields">
+              <div class="field"><label for="dlr-tickets">Park tickets</label><div class="money"><span aria-hidden="true">$</span><input id="dlr-tickets" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="dlr-hotel">Hotel</label><div class="money"><span aria-hidden="true">$</span><input id="dlr-hotel" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="dlr-travel">Getting there <span class="optional">(flights, gas)</span></label><div class="money"><span aria-hidden="true">$</span><input id="dlr-travel" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="dlr-food">Food</label><div class="money"><span aria-hidden="true">$</span><input id="dlr-food" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="dlr-extras">Extras <span class="optional">(optional)</span></label><div class="money"><span aria-hidden="true">$</span><input id="dlr-extras" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+            </div>
+            <ul class="price-links">
+              <li><a href="https://disneyland.disney.go.com/admission/tickets/" target="_blank" rel="noopener">Ticket prices<svg aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li>
+              <li><a href="https://disneyland.disney.go.com/hotels/" target="_blank" rel="noopener">Hotel prices<svg aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li>
+            </ul>
+            <div class="cost-total"><span class="cost-flag">Cheapest</span><span class="total-label">Trip total</span><strong data-total>—</strong><span class="total-meta" data-meta></span></div>
+          </article>
+
+          <article class="cost-card" data-dest="aulani" aria-labelledby="cost-aulani-name">
+            <header class="card-head">
+              <span class="badge"><svg aria-hidden="true"><use href="#i-palm"/></svg></span>
+              <h3 id="cost-aulani-name">Aulani</h3>
+            </header>
+            <div class="cost-fields">
+              <div class="field"><label for="aulani-stay">Resort stay</label><div class="money"><span aria-hidden="true">$</span><input id="aulani-stay" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="aulani-travel">Getting there <span class="optional">(flights, car)</span></label><div class="money"><span aria-hidden="true">$</span><input id="aulani-travel" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="aulani-food">Food</label><div class="money"><span aria-hidden="true">$</span><input id="aulani-food" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="aulani-extras">Lū‘au, spa &amp; extras <span class="optional">(optional)</span></label><div class="money"><span aria-hidden="true">$</span><input id="aulani-extras" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <p class="included">No park tickets needed. Many activities are included with your stay.</p>
+            </div>
+            <ul class="price-links">
+              <li><a href="https://www.disneyaulani.com/rooms-offers/" target="_blank" rel="noopener">Room prices<svg aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li>
+            </ul>
+            <div class="cost-total"><span class="cost-flag">Cheapest</span><span class="total-label">Trip total</span><strong data-total>—</strong><span class="total-meta" data-meta></span></div>
+          </article>
+
+          <article class="cost-card" data-dest="dcl" aria-labelledby="cost-dcl-name">
+            <header class="card-head">
+              <span class="badge"><svg aria-hidden="true"><use href="#i-ship"/></svg></span>
+              <h3 id="cost-dcl-name">Disney Cruise Line</h3>
+            </header>
+            <div class="cost-fields">
+              <div class="field"><label for="dcl-fare">Cruise fare</label><div class="money"><span aria-hidden="true">$</span><input id="dcl-fare" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="dcl-travel">Getting to the port <span class="optional">(flights, gas)</span></label><div class="money"><span aria-hidden="true">$</span><input id="dcl-travel" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="dcl-hotel">Hotel before sailing <span class="optional">(optional)</span></label><div class="money"><span aria-hidden="true">$</span><input id="dcl-hotel" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <div class="field"><label for="dcl-extras">Onboard extras &amp; tips <span class="optional">(optional)</span></label><div class="money"><span aria-hidden="true">$</span><input id="dcl-extras" data-cost type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
+              <p class="included">Your stateroom, most meals, shows, and kids' clubs come with the fare. <a class="cite" href="https://disneycruise.disney.go.com/why-cruise-disney/whats-included-in-cruise/" target="_blank" rel="noopener">Source<span class="sr-only"> (opens in a new tab)</span></a></p>
+            </div>
+            <ul class="price-links">
+              <li><a href="https://disneycruise.disney.go.com/cruises-destinations/itineraries/" target="_blank" rel="noopener">Cruise prices<svg aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> (opens in a new tab)</span></a></li>
+            </ul>
+            <div class="cost-total"><span class="cost-flag">Cheapest</span><span class="total-label">Trip total</span><strong data-total>—</strong><span class="total-meta" data-meta></span></div>
+          </article>
+        </div>
+
+        <div class="cost-result" id="cost-result" aria-live="polite">
+          <p>Add prices for at least two trips to see which is cheaper.</p>
+        </div>
+        <button type="button" class="btn btn-outline btn-sm" id="cost-clear">Clear everything</button>
+      </div>
+    </section>
+
     <!-- QUIZ -->
-    <section class="section section-tint" id="quiz" aria-labelledby="quiz-title">
+    <section class="section" id="quiz" aria-labelledby="quiz-title">
       <div class="container">
         <div class="section-head">
           <div>
@@ -339,25 +464,41 @@
                 <label class="option"><input type="radio" name="who" value="littleKids"><span>Family with little kids</span></label>
                 <label class="option"><input type="radio" name="who" value="teens"><span>Family with teens</span></label>
                 <label class="option"><input type="radio" name="who" value="adults"><span>Couple or adults only</span></label>
+                <label class="option"><input type="radio" name="who" value="solo"><span>Just me, traveling solo</span></label>
+                <label class="option"><input type="radio" name="who" value="older"><span>Older adults or grandparents</span></label>
                 <label class="option"><input type="radio" name="who" value="firstTime"><span>First-ever Disney trip</span></label>
               </div>
             </fieldset>
 
             <fieldset class="question" data-step="2">
-              <legend tabindex="-1">What's your budget?</legend>
-              <div class="options">
-                <label class="option"><input type="radio" name="budget" value="low"><span><b class="opt-dollar">$</b> Keep it lean</span></label>
-                <label class="option"><input type="radio" name="budget" value="mid"><span><b class="opt-dollar">$$</b> Somewhere in the middle</span></label>
-                <label class="option"><input type="radio" name="budget" value="high"><span><b class="opt-dollar">$$$</b> Go all out</span></label>
-              </div>
-            </fieldset>
-
-            <fieldset class="question" data-step="3">
               <legend tabindex="-1">How long can you get away?</legend>
               <div class="options">
                 <label class="option"><input type="radio" name="length" value="short"><span>2–3 days</span></label>
                 <label class="option"><input type="radio" name="length" value="medium"><span>4–5 days</span></label>
                 <label class="option"><input type="radio" name="length" value="long"><span>6 days or more</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="question" data-step="3">
+              <legend tabindex="-1">What's your budget?</legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="budget" value="low"><span><b class="opt-dollar">$</b> Keep it lean</span></label>
+                <label class="option"><input type="radio" name="budget" value="mid"><span><b class="opt-dollar">$$</b> Somewhere in the middle</span></label>
+                <label class="option"><input type="radio" name="budget" value="high"><span><b class="opt-dollar">$$$</b> Go all out</span></label>
+                <label class="option"><input type="radio" name="budget" value="custom"><span>Type my own amount</span></label>
+              </div>
+              <div class="custom-budget" id="custom-budget" hidden>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="quiz-amount">Total trip budget</label>
+                    <div class="money"><span aria-hidden="true">$</span><input id="quiz-amount" type="number" inputmode="decimal" min="1" step="any" placeholder="3000"></div>
+                  </div>
+                  <div class="field field-sm">
+                    <label for="quiz-travelers">Travelers</label>
+                    <input id="quiz-travelers" type="number" inputmode="numeric" min="1" max="20" step="1" value="2">
+                  </div>
+                </div>
+                <p class="note" id="quiz-amount-help">I'll match this to the $ scale using a rough guide (my own estimate, not Disney pricing): under $250 per person per day is $, $250–$450 is $$, and over $450 is $$$.</p>
               </div>
             </fieldset>
 
@@ -386,11 +527,15 @@
               <div>
                 <h3 id="result-name"></h3>
                 <p id="result-reason"></p>
+                <p class="note" id="result-budget" hidden></p>
               </div>
             </div>
             <div class="card-actions">
               <button type="button" class="btn btn-outline" id="quiz-restart">Start over</button>
-              <a class="text-link" id="result-link" href="#compare">See the details<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+              <span class="result-links">
+                <a class="text-link" id="result-link" href="#compare">See the details<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+                <a class="text-link" href="#cost">Price your dates<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+              </span>
             </div>
           </div>
 
